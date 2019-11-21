@@ -1,0 +1,136 @@
+openapi: 3.0.0
+info:
+  title: user
+  version: '1.0'
+  contact:
+    name: Chris Neat
+    url: winning.com
+    email: cneat083@yahoo.com
+  termsOfService: terms.com
+  license:
+    name: MIT
+    url: MIT
+  description: User details API
+servers:
+  - url: 'http://localhost:3000'
+    description: Chris
+paths:
+  /users:
+    parameters: []
+    post:
+      summary: createUser
+      tags: []
+      responses:
+        '200':
+          description: OK
+      description: Creating user
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: userId
+          required: true
+      operationId: '2'
+    get:
+      summary: Get user details
+      tags: []
+      responses:
+        '200':
+          description: OK
+          headers: {}
+        '201':
+          description: Created
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+          headers:
+            header-0:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Test1:
+                    type: string
+                  Test:
+                    type: string
+              examples:
+                example-1:
+                  value:
+                    Test1: Test
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: userId
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Test1:
+                  type: string
+          application/xml:
+            schema:
+              type: object
+              properties: {}
+          multipart/form-data:
+            schema:
+              type: object
+              properties: {}
+          text/html:
+            schema:
+              type: object
+              properties: {}
+          text/plain:
+            schema:
+              type: object
+              properties: {}
+          application/EDI-X12:
+            schema:
+              type: object
+              properties: {}
+          application/EDIFACT:
+            schema:
+              type: object
+              properties: {}
+          application/atom+xml:
+            schema:
+              type: object
+              properties: {}
+          application/font-woff:
+            schema:
+              type: object
+              properties: {}
+          application/gzip:
+            schema:
+              type: object
+              properties: {}
+          application/javascript:
+            schema:
+              type: object
+              properties: {}
+          application/octet-stream:
+            schema:
+              type: object
+              properties: {}
+          application/ogg:
+            schema:
+              type: object
+              properties: {}
+        description: Body Description
+      description: Getting user details
+      operationId: '1'
+components:
+  schemas: {}
